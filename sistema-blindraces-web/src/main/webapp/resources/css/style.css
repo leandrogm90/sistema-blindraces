@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+#conteudo {
+	max-width:960px;
+	margin: auto;
+}
+
+.panelGrid {
+	border: 0px;
+} 

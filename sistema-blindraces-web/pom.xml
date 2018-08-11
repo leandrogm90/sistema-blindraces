@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.speedrunsbrasil</groupId>
+	<artifactId>sistema-blindraces-web</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+  
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<build>
+		<plugins>
+	        <plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+		        <groupId>com.heroku.sdk</groupId>
+		        <artifactId>heroku-maven-plugin</artifactId>
+		        <version>2.0.3</version>
+		        <configuration>
+				  <appName>sistema-blindraces</appName>
+				</configuration>
+		      </plugin>
+		</plugins>
+	</build>
+	
+	<repositories>
+	    <repository>
+	        <id>prime-repo</id>
+	        <name>PrimeFaces Maven Repository</name>
+	        <url>http://repository.primefaces.org</url>
+	        <layout>default</layout>
+	    </repository>
+	</repositories>
+
+	<dependencies>
+		<!-- Mojarra -->
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
+		<dependency>
+	    	<groupId>com.sun.faces</groupId>
+	    	<artifactId>jsf-impl</artifactId>
+	    	<version>2.2.6</version>
+		</dependency>
+			
+		<dependency>
+	    	<groupId>com.sun.faces</groupId>
+	    	<artifactId>jsf-api</artifactId>
+	    	<version>2.2.6</version>
+		</dependency>
+		
+		
+		<!-- PrimeFaces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.speedrunsbrasil</groupId>
+			<artifactId>sistema-blindraces-dominio</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.speedrunsbrasil</groupId>
+			<artifactId>sistema-blindraces-core</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>cruze</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+	</dependencies>
+</project>

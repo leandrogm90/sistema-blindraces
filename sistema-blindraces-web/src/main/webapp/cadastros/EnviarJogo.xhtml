@@ -1,0 +1,66 @@
+<ui:composition template="/templates/template.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+	 
+	 <ui:define name="content">
+	 	<div id="conteudo">
+			<p:messages />
+			<h:form id="form">
+
+				<h2 style="color: #eeeeee; font-weight: bold; font-family: Segoe UI, Arial, sans-serif;">Submissão de Jogos - BRASA Mystery Game Tournament #2</h2>
+				<h4 style="color: #eeeeee; font-weight: bold; font-family: Segoe UI, Arial, sans-serif;">O Mystery Game Tournament da SpeedrunsBrasil! No MGT os jogadores só descobrem o que vão jogar minutos antes da partida.</h4>
+				<h4 style="color: #eeeeee; font-weight: bold; font-family: Segoe UI, Arial, sans-serif;">Utilize esse formulário para enviar jogos a serem utilizados no torneio. Lembrete de que você não poderá jogar um jogo escolhido por você mesmo.</h4>
+							
+				<p:separator />
+				<p:panel header="Seus Dados">
+					<p:panelGrid columns="2" layout="grid" styleClass="panelGrid" columnClasses="ui-grid-col-3, ui-grid-col-3">
+						<p:outputLabel for="nickTwitch" value="Canal da Twitch" />
+						<p:inputText id="nickTwitch" required="true" value="#{enviarJogoMB.submitJogo.runner.nickTwitch}" 
+								maxlength="32" placeholder="nome do canal" style="width: 100%;"/>
+			
+						<p:outputLabel for="nickDiscord" value="Nick no Discord" />
+						<p:inputText id="nickDiscord" required="true" value="#{enviarJogoMB.submitJogo.runner.nameTagDiscord}" 
+								maxlength="32" placeholder="SeuNick#1234" style="width: 100%;"/>
+					</p:panelGrid>
+				</p:panel>
+				
+				<p:spacer height="20" />
+		
+				<p:panel header="Dados do Jogo">
+					<p:panelGrid columns="2" layout="grid" styleClass="panelGrid" columnClasses="ui-grid-col-4, ui-grid-col-5">
+						<p:outputLabel for="tituloJogo" value="Título do Jogo" />
+						<p:inputText id="tituloJogo" required="true" value="#{enviarJogoMB.submitJogo.jogo.titulo}" maxlength="32" style="width: 100%;"/>
+			
+						<p:outputLabel for="console" value="Console" />
+						<p:inputText id="console" required="true" value="#{enviarJogoMB.submitJogo.jogo.console}" maxlength="16" style="width: 100%;"/>		
+				
+						<p:outputLabel for="genero" value="Gênero" />
+						<p:inputText id="genero" required="true" value="#{enviarJogoMB.submitJogo.jogo.genero}" maxlength="16" style="width: 100%;"/>
+			
+						<p:outputLabel for="objetivo" value="Objetivo" />
+						<p:inputText id="objetivo" required="true" value="#{enviarJogoMB.submitJogo.objetivo}" maxlength="200" style="width: 100%;"/>
+			
+						<p:outputLabel for="linkDownload" value="Link para download" />
+						<p:inputText id="linkDownload" required="true" value="#{enviarJogoMB.submitJogo.linkDownload}" maxlength="500" style="width: 100%;"/>
+			
+						<p:outputLabel for="linkPastebin" value="Link para informações do jogo" />
+						<p:inputText id="linkPastebin" required="true" value="#{enviarJogoMB.submitJogo.linkPastebin}" maxlength="100" 
+								placeholder="(utilize sites como o pastebin ou paste.ee)" style="width: 100%;"/>
+						
+						<a href="https://pastebin.com/qgJpUwVP">(siga o modelo)</a>
+						<p:spacer />
+			
+						<p:outputLabel for="estimate" value="Estimativa (em minutos)" />
+						<p:spinner id="estimate" value="#{enviarJogoMB.submitJogo.estimate}" min="1" max="60" />
+					</p:panelGrid>
+				</p:panel>
+								
+				<p:commandButton style="margin: 20px 0px;" value="Enviar" ajax="false" action="#{enviarJogoMB.cadastrar}" />
+		
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
