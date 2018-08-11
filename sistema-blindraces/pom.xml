@@ -6,29 +6,45 @@
 	<artifactId>sistema-blindraces</artifactId>
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
+	<profiles>
+		<profile>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.heroku.sdk</groupId>
+						<artifactId>heroku-maven-plugin</artifactId>
+						<version>2.0.3</version>
+						<configuration>
+							<appName>sistema-blindraces</appName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<modules>
+				<module>sistema-blindraces-dominio</module>
+				<module>sistema-blindraces-core</module>
+				<module>sistema-blindraces-web</module>
+			</modules>
+			<dependencies>
+				<dependency>
+					<groupId>com.speedrunsbrasil</groupId>
+					<artifactId>sistema-blindraces-dominio</artifactId>
+					<version>0.0.1</version>
+				</dependency>
 
-	<modules>
-		<module>sistema-blindraces-dominio</module>
-		<module>sistema-blindraces-core</module>
-		<module>sistema-blindraces-web</module>
-	</modules>
+				<dependency>
+					<groupId>com.speedrunsbrasil</groupId>
+					<artifactId>sistema-blindraces-core</artifactId>
+					<version>0.0.1</version>
+				</dependency>
 
-	<dependency>
-		<groupId>com.speedrunsbrasil</groupId>
-		<artifactId>sistema-blindraces-dominio</artifactId>
-		<version>0.0.1</version>
-	</dependency>
-
-	<dependency>
-		<groupId>com.speedrunsbrasil</groupId>
-		<artifactId>sistema-blindraces-core</artifactId>
-		<version>0.0.1</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>com.speedrunsbrasil</groupId>
-		<artifactId>sistema-blindraces-web</artifactId>
-		<version>0.0.1</version>
-	</dependency>
+				<dependency>
+					<groupId>com.speedrunsbrasil</groupId>
+					<artifactId>sistema-blindraces-web</artifactId>
+					<version>0.0.1</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 
 </project>

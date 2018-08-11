@@ -28,5 +28,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/sistema-blindraces-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sistema-blindraces-dominio"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sistema-blindraces-web"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

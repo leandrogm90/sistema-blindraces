@@ -33,7 +33,7 @@
 		        <configuration>
 				  <appName>sistema-blindraces</appName>
 				</configuration>
-		      </plugin>
+		    </plugin>
 		</plugins>
 	</build>
 	
