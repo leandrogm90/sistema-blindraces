@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.speedrunsbrasil</groupId>
+	<artifactId>sistema-blindraces</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>sistema-blindraces-dominio</module>
+		<module>sistema-blindraces-core</module>
+		<module>sistema-blindraces-web</module>
+	</modules>
+
+	<dependency>
+		<groupId>com.speedrunsbrasil</groupId>
+		<artifactId>sistema-blindraces-dominio</artifactId>
+		<version>0.0.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>com.speedrunsbrasil</groupId>
+		<artifactId>sistema-blindraces-core</artifactId>
+		<version>0.0.1</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.speedrunsbrasil</groupId>
+		<artifactId>sistema-blindraces-web</artifactId>
+		<version>0.0.1</version>
+	</dependency>
+
+</project>
